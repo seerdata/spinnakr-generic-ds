@@ -7,10 +7,9 @@ Please review test01.json as an example of how to structure data.
 Note that one can have 'N' categories at the top level each
 defined in the categories array.
 
-Each category has its own ID as well enabling the possibility
-in the future of persistant store via cassandra or other document
+Each category has its own ID enabling the possibility
+in the future of persistant storage via cassandra or other document
 store.
 
 Each 'category' has within it attributes which allows for further
 customization of the particular data.
- 
