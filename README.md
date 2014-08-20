@@ -2,25 +2,28 @@
 
 Here is the model specification:
 
-https://github.com/stormasm/spinnakr-generic-ds/blob/master/test05.json
+https://github.com/stormasm/spinnakr-generic-ds/blob/master/test06.json
 
-The **interval** and the **calculation** are functions of **type** and **dimension**,
-in other words **interval** and **calculation** are dependent upon **type** and **dimension**.
-
-For type = visit, and dimension = uuid
+For dimension = visit-useragent
 
 ```
-interval = ["hours", "days"]
-calculation = "sum", "average"
+keys= ["mozilla", "firefox", "chrome"]
 ```
 
-For type = visit, and dimension = useragent
+For dimension = visit-uuid
 
-key= ["mozilla", "firefox", "chrome"]
+keys are uuids
+
+For dimension = job-skills
 
 ```
-interval = ["weeks"]
-calculation = ["sum", "average", "percentage"]
+keys = ["ios", "android", "java", "ruby", "python"]
+```
+
+calculations can be
+
+```
+["sum", "average", "percentage"]
 ```
 
 intervals can be
