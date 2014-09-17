@@ -4,6 +4,7 @@
 + type
 + value
 + amount
++ score
 
 
 ```
