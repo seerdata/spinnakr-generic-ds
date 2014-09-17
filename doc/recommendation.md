@@ -8,7 +8,6 @@
 
 ```
     Recommendation.create(
-
                         account_id: site.account_id,
                         site_id: site.id,
                         recommendable_id: 0,
