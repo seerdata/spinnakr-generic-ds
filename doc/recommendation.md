@@ -18,4 +18,5 @@
                         recommendation_type_id: 1,
                         welcome_template_id: 0,
                         published: true,
-                        details: {})```
+                        details: {})
+```
