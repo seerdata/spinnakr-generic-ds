@@ -67,6 +67,9 @@ what key to pull and then process and send back the appropriate JSON.
 
 The returning JSON structure will be the Redis Hashmap converted to JSON.
 
+**The following information is not part of the spec but merely here to
+summarize parts of an earlier discussion**
+
 #### Possible Names inside the Hashmap / JSON
 
 ```
