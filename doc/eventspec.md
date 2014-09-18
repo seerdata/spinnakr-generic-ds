@@ -66,3 +66,16 @@ The endpoint will have in it the /project/dimension/key so we know
 what key to pull and then process and send back the appropriate JSON.
 
 The returning JSON structure will be the Redis Hashmap converted to JSON.
+
+## Possible Names inside the Hashmap / JSON
+
+```
+event_type       : "comparator"
+account_id       :
+project_id       :
+dimension        :
+key              :
+calculated_value :
+threshold        :
+created_at       :
+```
