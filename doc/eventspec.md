@@ -70,12 +70,16 @@ The returning JSON structure will be the Redis Hashmap converted to JSON.
 #### Possible Names inside the Hashmap / JSON
 
 ```
-event_type       : "comparator"
-account_id       :
-project_id       :
-dimension        :
-key              :
-calculated_value :
-threshold        :
-created_at       :
+{
+"event_type"       : "comparator",
+"account_id"       : "1",
+"project_id"       : "1",
+"dimension"        : "job-skills",
+"key"              : "javscript",
+"calculation"      : ["average", "standard_deviation"],
+"calculated_value" : "10",
+"threshold"        : "9",
+"result"           : "above",
+"created_at"       : "2014-08-06 17:51:10 +0000",
+}
 ```
