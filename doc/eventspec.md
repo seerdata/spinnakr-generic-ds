@@ -12,7 +12,7 @@ simple from a development perspective.  We are already using Redis for
 the input data, so why not use it for the output data for now as well.
 
 The Redis platform will give us a nice way to migrate in the future to
-what ever persistance system our customers want.
+what ever long term persistance system our customers want.
 
 All of the event data will live in a Redis Hashmap
 
