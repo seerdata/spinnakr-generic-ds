@@ -67,7 +67,7 @@ what key to pull and then process and send back the appropriate JSON.
 
 The returning JSON structure will be the Redis Hashmap converted to JSON.
 
-## Possible Names inside the Hashmap / JSON
+#### Possible Names inside the Hashmap / JSON
 
 ```
 event_type       : "comparator"
