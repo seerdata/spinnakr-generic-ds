@@ -73,11 +73,6 @@ And the primary key can be incremented with this command
 The beauty of this system is that because we are using Hashmaps we can
 write anything we want in the Hashmap depending on the problem.
 
-The endpoint will have in it the /project/dimension/key so we know
-what key to pull and then process and send back the appropriate JSON.
-
-The returning JSON structure will be the Redis Hashmap converted to JSON.
-
 #### A Redis Set will hold all of the primary keys
 
 A Redis **set** will hold all of the primary keys associated with the
