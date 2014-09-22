@@ -26,6 +26,9 @@ When I send Justin the input JSON data, I will send along the DB number. Justin
 will then use that number along with the Redis **select** statement to write the
 output event data to that particular DB.
 
+The DB numbers will start at 100 and go up from there.  This will leave lower
+DBs for other purposes.
+
 The Redis Hashmaps will have the following key name structure.
 
 ```
@@ -48,16 +51,24 @@ Examples include the following for project ids {1,2}
 2:job-skills:trident:8
 ```
 
-NOTE: The primary key is unique across all of the keys in the particular DB
+####Primary Key Infrastructure
+
+The primary key is unique across all of the keys in the particular DB
 and enables us to have keys with the same name.  For example, at a later
 point in time we may want to do the exact same key again, but it will have
 a different primary key.
 
 The primary key infrastructure will read from Redis a key called
 **primary-key** which will sit in the same DB we are writing to for that
-particular account id.  The **primary-key** will be read, a new key will be
-written and then that key will be incremented by 1.  The primary keys
-will be integers starting at 0 (zero).
+particular account id.  
+
+The primary key can be read with this command
+
+[http://redis.io/commands/get](http://redis.io/commands/get)
+
+And the primary key can be incremented with this command
+
+[http://redis.io/commands/incr](http://redis.io/commands/incr)
 
 The beauty of this system is that because we are using Hashmaps we can
 write anything we want in the Hashmap depending on the problem.
@@ -66,6 +77,35 @@ The endpoint will have in it the /project/dimension/key so we know
 what key to pull and then process and send back the appropriate JSON.
 
 The returning JSON structure will be the Redis Hashmap converted to JSON.
+
+#### A Redis Set will hold all of the primary keys
+
+A Redis **set** will hold all of the primary keys associated with the
+
+```
+project:dimension:key:*
+```
+
+The key will be called
+
+```
+project:dimension:key:set
+```
+
+This will enable fast lookup when a request comes in from the user.  Otherwise
+the entire DB would have to be searched looking for matches.
+
+So when a user sends in an endpoint containing
+
+```
+/project/dimension/key
+```
+
+We will send back a time ordered list in JSON format of all of data in the keys.
+The time ordering will be guaranteed by the ordering of the primary keys. We know
+that a key with a primary key that is smaller will happen earlier in time than a primary key
+that is larger.  
+
 
 **The following information is not part of the spec but merely here to
 summarize parts of an earlier discussion**
