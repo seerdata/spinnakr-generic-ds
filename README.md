@@ -23,7 +23,7 @@ keys = ["ios", "android", "java", "ruby", "python"]
 calculations can be
 
 ```
-["sum", "average", "percentage"]
+["count", "sum", "average", "standard_deviation", "linear_regression"]
 ```
 
 intervals can be
