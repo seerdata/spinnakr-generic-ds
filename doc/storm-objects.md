@@ -21,9 +21,9 @@ for our customers to send in decimal values.
 | dbnumber        | java.lang.Long            |
 
 
-This is the default parsing when the tuple
+### Old JSONObject
 
-is taken off of RabbitMQ and cast as a JSONObject:
+This is the default parsing when the tuple is taken off of RabbitMQ and cast as a JSONObject:
 
 ```
 "account_id" -> "java.lang.Long"
